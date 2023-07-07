@@ -1,0 +1,54 @@
+﻿@model IEnumerable<projetDotNet.Models.cart>
+
+@{
+    ViewBag.Title = "cart";
+}
+
+
+<body>
+    <h2 style=" text-align: center; "> Commandes en cours</h2>
+
+    <table class="table">
+        <tr>
+            <th> numero de commande </th>
+
+            <th> client </th>
+            <th> Game </th>
+
+            <th>
+                Quantité
+            </th>
+
+            <th> Date</th>
+            <th> </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (item.numeroCommande != null)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.numeroCommande)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.clientID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GameName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.quantité)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date)
+                    </td>
+
+                </tr>
+            }
+        }
+    </table>
+
+
+
+</body>
